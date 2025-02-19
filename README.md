@@ -7,7 +7,7 @@ Based on the Blood Brothers book
 # Members 
 * Sufyan
 * Ethan 
-* Mavia
+* Maiva
 * Victor 
 * Harry
 * Vennce
