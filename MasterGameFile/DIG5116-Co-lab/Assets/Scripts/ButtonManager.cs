@@ -31,19 +31,20 @@ public class ButtonManager : MonoBehaviour
         settingUi.SetActive(false);
     }
 
-    //
-    //This function loads the first level/scene in the game 
-    //
+    ///<summary>
+    ///This function loads the first level/scene in the game 
+    ///</summary>
+    ///Vennce
     public void StartGame()
     {
         //Need to add first game scene here
         SceneManager.LoadScene("");
     }
 
-    //
-    //This function loads the settings Ui, this should only be available in the main menu
-    //but can be added to other scenes if they incorperate a pause menu.
-    //
+    ///<summary>
+    ///This function loads the settings Ui, this should only be available in the main menu but can be added to other scenes if they incorperate a pause menu.
+    ///</summary>
+    ///Vennce
     public void LoadSettingsUi()
     {
         firstMenuUi.SetActive(false);
@@ -51,26 +52,30 @@ public class ButtonManager : MonoBehaviour
         SetDefaultButton(defaultSettingButton);
     }
 
-    //
-    //This function should load the first menu that pops up
-    //
+    ///<summary>
+    ///This function should load the first menu that pops up
+    ///</summary>
+    ///Vennce
     public void LoadFirstMenuUi()
     {
         settingUi.SetActive(false);
         firstMenuUi.SetActive(true);
         SetDefaultButton(defaultMenuButton);
     }
-    //
-    //This function quits the game
-    //
+    ///<summary>
+    ///This function quits the gameVennce
+    ///</summary>
+    ///Vennce
     public void QuitGame()
     {
         Application.Quit();
     }
 
-    //
-    //This function sets the default button hover when switching uis
-    //
+    ///<summary>
+    ///This function sets the default button hover when switching uis
+    ///</summary>
+    ///<param name="button"></param>
+    ///Vennce
     private void SetDefaultButton(GameObject button)
     {
         _EventSystem.SetSelectedGameObject(null);
