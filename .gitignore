@@ -2,20 +2,20 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Uu]ser[Ss]ettings/
+/MasterGameFile/DIG5116-Co-lab/[Ll]ibrary/
+/MasterGameFile/DIG5116-Co-lab/[Tt]emp/
+/MasterGameFile/DIG5116-Co-lab/[Oo]bj/
+/MasterGameFile/DIG5116-Co-lab/[Bb]uild/
+/MasterGameFile/DIG5116-Co-lab/[Bb]uilds/
+/MasterGameFile/DIG5116-Co-lab/[Ll]ogs/
+/MasterGameFile/DIG5116-Co-lab/[Uu]serSettings/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
-/[Mm]emoryCaptures/
+/MasterGameFile/DIG5116-Co-lab/[Mm]emoryCaptures/
 
 # Recordings can get excessive in size
-/[Rr]ecordings/
+/MasterGameFile/DIG5116-Co-lab/[Rr]ecordings/
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
