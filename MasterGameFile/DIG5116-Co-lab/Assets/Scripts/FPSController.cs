@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.UI;
 using Vennce;
+using System.Threading;
 
 public class FPSController : MonoBehaviour
 {
-    InputMapSubscriptions inputMapSubscriptions;
+    InputMapSubscriptions GetInput;
     Camera playerCamera;
     CharacterController characterController;
 
@@ -19,6 +20,7 @@ public class FPSController : MonoBehaviour
     [Header("Movement Speed Parameters")]
     public float MovementSpeed = 5.0f;
     private Vector3 MovementDirection;
+    Vector2 CurrentInput;
 
     [Header("Gravity Parameters")]
     public float Gravity = 30.0f;
@@ -35,7 +37,7 @@ public class FPSController : MonoBehaviour
 
     private void Awake()
     {
-        inputMapSubscriptions = GetComponent<InputMapSubscriptions>();
+        GetInput = GetComponent<InputMapSubscriptions>();
         playerCamera = GetComponentInChildren<Camera>();
         characterController = GetComponent<CharacterController>();
         IsGamePaused = false;
@@ -44,6 +46,73 @@ public class FPSController : MonoBehaviour
 
     private void Start()
     {
-        
+        LockCursor();
+    }
+
+
+    private void Update()
+    {
+        //Need to add movement logic here
+        if (CanMove)
+        {
+            HandleMovementInput();
+            //HandleCameraInput();
+            HandleMouseLook();
+            ApplyFinalMovements();
+        }
+    }
+
+    ///<summary>
+    /// This will lock the cursor to the center of the screen
+    /// Need to check logic for locking contoller input
+    /// </summary>
+    private void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    ///<summary>
+    ///This will unlock the cursor from the center of the screen
+    ///</summary>
+    private void UnlockCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    ///<summary>
+    ///This function handles the movement of the player
+    ///</summary>
+    private void HandleMovementInput()
+    {
+        CurrentInput = new Vector2(GetInput.NormalisedMovementInput.x, GetInput.NormalisedMovementInput.y) * MovementSpeed;
+
+        float moveDirectionY = MovementDirection.y;
+        MovementDirection = (transform.TransformDirection(Vector3.forward) * CurrentInput.y) + (transform.TransformDirection(Vector3.right) * CurrentInput.x);
+        MovementDirection.y = moveDirectionY;
+    }
+
+    ///<summary>
+    ///
+    ///</summary>
+    private void HandleMouseLook()
+    {
+        RotationX -= GetInput.CameraMovement.y * Sensitivity;
+        RotationX = Mathf.Clamp(RotationX, -ViewAngle, ViewAngle);
+        playerCamera.transform.localRotation = Quaternion.Euler(RotationX, 0, 0);
+        transform.rotation *= Quaternion.Euler(0, GetInput.CameraMovement.x * Sensitivity, 0);
+    }
+
+    ///<summary>
+    ///This function applies the movement to the player
+    ///</summary>
+    private void ApplyFinalMovements()
+    {
+        if (!characterController.isGrounded)
+        {
+            MovementDirection.y -= Gravity * Time.deltaTime;
+        }
+        characterController.Move(MovementDirection * Time.deltaTime);
     }
 }
