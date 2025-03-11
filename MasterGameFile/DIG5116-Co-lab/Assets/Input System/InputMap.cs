@@ -297,7 +297,7 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""8588b30d-b64f-490b-9f7b-1c401ae15d1f"",
-                    ""path"": ""<Joystick>/stick"",
+                    ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

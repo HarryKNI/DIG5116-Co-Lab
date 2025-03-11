@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.UI;
+using UnityEngine.UI;
 using Vennce;
-using System.Threading;
 
 public class FPSController : MonoBehaviour
 {
@@ -32,6 +31,8 @@ public class FPSController : MonoBehaviour
 
     [Header("UI HANDLER")]
     [SerializeField] GameObject PauseMenu;
+    [SerializeField] GameObject CrosshairMenu;
+    public bool shouldCrosshairBeVisable;
     private bool IsGamePaused;
     private bool PauseMenuActive;
 
@@ -47,6 +48,8 @@ public class FPSController : MonoBehaviour
     private void Start()
     {
         LockCursor();
+        //Activating crosshair
+        CrosshairMenu.SetActive(shouldCrosshairBeVisable);
     }
 
 
@@ -57,7 +60,7 @@ public class FPSController : MonoBehaviour
         {
             HandleMovementInput();
             //HandleCameraInput();
-            HandleMouseLook();
+            HandleFPSCamera();
             ApplyFinalMovements();
         }
     }
@@ -94,9 +97,9 @@ public class FPSController : MonoBehaviour
     }
 
     ///<summary>
-    ///
+    ///This function handles the camera movement of the player
     ///</summary>
-    private void HandleMouseLook()
+    private void HandleFPSCamera()
     {
         RotationX -= GetInput.CameraMovement.y * Sensitivity;
         RotationX = Mathf.Clamp(RotationX, -ViewAngle, ViewAngle);
