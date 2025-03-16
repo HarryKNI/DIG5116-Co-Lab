@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.Audio;
 using Vennce;
 
-public class StateManager : MonoBehaviour
+public class PauseManager : MonoBehaviour
 {
     [Header("Game State Checker")]
-    public bool isGamePaused;
+    [SerializeField] GameManager GameManager;
 
     [Header("Ui Manager")]
-    [SerializeField] FPSUiManagers UiManager;
+    [SerializeField] FPSUiManager UiManager;
 
     [Header("Input Manager")]
     [SerializeField] InputMapSubscriptions GetInput;
@@ -30,7 +30,7 @@ public class StateManager : MonoBehaviour
         {
             case true:
                 {
-                    if (isGamePaused)
+                    if (GameManager.isGamePaused)
                     {
                         UnPauseGame();
                     }
@@ -53,7 +53,7 @@ public class StateManager : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0;
-        isGamePaused = true;
+        GameManager.isGamePaused = true;
         UiManager.ActivatePauseMenu();
     }
 
@@ -64,8 +64,7 @@ public class StateManager : MonoBehaviour
     public void UnPauseGame()
     {
         Time.timeScale = 1;
-        isGamePaused = false;
+        GameManager.isGamePaused = false;
         UiManager.ResumeGame();
     }
-
 }

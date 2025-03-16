@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
-public class FPSUiManagers : MonoBehaviour
+public class FPSUiManager : MonoBehaviour
 {
     [Header("Available Ui")]
     [SerializeField] GameObject pauseMenuUi;
@@ -20,7 +20,7 @@ public class FPSUiManagers : MonoBehaviour
     [SerializeField] FPSController PlayerController;
 
     [Header("Game State Checker")]
-    [SerializeField] StateManager StateManager;
+    [SerializeField] GameManager GameManager;
 
     /// <summary>
     /// This function opens the pause menu and closes the settings menu if it is open
@@ -57,7 +57,7 @@ public class FPSUiManagers : MonoBehaviour
         PlayerController.LockCursor();
         PlayerController.CanMove = true;
         //this is failsafe for when the button is pressed when the game is paused
-        StateManager.isGamePaused = false;
+        GameManager.isGamePaused = false;
         Time.timeScale = 1;
     }
 

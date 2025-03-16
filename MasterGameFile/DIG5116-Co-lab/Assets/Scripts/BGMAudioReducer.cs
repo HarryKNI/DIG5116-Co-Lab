@@ -7,14 +7,11 @@ public class BGMAudioReducer : MonoBehaviour
 {
     [Header("Audio inputs:")]
     [SerializeField] private AudioSource BGM;
-    [SerializeField] private StateManager StateManager;
-
-    [Header("Audio levels:")]
-    public float volumeMultiplier = 0.5f;
+    [SerializeField] private GameManager GameManager;
 
     private void Update()
     {
-        SetBGMAudioLevel(StateManager.isGamePaused);
+        SetBGMAudioLevel(GameManager.isGamePaused);
     }
 
     /// <summary>
