@@ -19,6 +19,9 @@ public class FPSUiManagers : MonoBehaviour
     [Header("Locking/Unlocking Cursor Parametre")]
     [SerializeField] FPSController PlayerController;
 
+    [Header("Game State Checker")]
+    [SerializeField] StateManager StateManager;
+
     /// <summary>
     /// This function opens the pause menu and closes the settings menu if it is open
     /// </summary>
@@ -54,6 +57,7 @@ public class FPSUiManagers : MonoBehaviour
         PlayerController.LockCursor();
         PlayerController.CanMove = true;
         //this is failsafe for when the button is pressed when the game is paused
+        StateManager.isGamePaused = false;
         Time.timeScale = 1;
     }
 
@@ -64,6 +68,7 @@ public class FPSUiManagers : MonoBehaviour
     public void BackToMenu()
     {
         //Need to add main menu scene here
+        Time.timeScale = 1;
         SceneManager.LoadScene("");
     }
 
@@ -73,6 +78,7 @@ public class FPSUiManagers : MonoBehaviour
     /// Vennce
     public void QuitGame()
     {
+        Time.timeScale = 1;
         Application.Quit();
     }
 

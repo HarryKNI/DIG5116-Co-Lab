@@ -2552,9 +2552,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGamePaused: 0
-  audioMixer: {fileID: 24100000, guid: f70866b9d768a9d41ab195a201bdd9a9, type: 2}
-  audioVolume: 0
-  audioReducer: 2
   UiManager: {fileID: 2015151834}
   GetInput: {fileID: 1770333520}
 --- !u!1 &1392352511
@@ -3499,10 +3496,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 62126884}
   m_HandleRect: {fileID: 57239684}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 100
+  m_MinValue: 0.0001
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 100
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -3992,6 +3989,7 @@ MonoBehaviour:
   defaultSettingsButton: {fileID: 253414973}
   _EventSystem: {fileID: 1079180393}
   PlayerController: {fileID: 1770333519}
+  StateManager: {fileID: 1382551429}
 --- !u!1 &2045648883
 GameObject:
   m_ObjectHideFlags: 0
@@ -4136,6 +4134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2127370038}
   - component: {fileID: 2127370039}
+  - component: {fileID: 2127370040}
   m_Layer: 0
   m_Name: VolumeManager
   m_TagString: Untagged
@@ -4172,7 +4171,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: f70866b9d768a9d41ab195a201bdd9a9, type: 2}
   volumeSlider: {fileID: 1896043458}
+--- !u!114 &2127370040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127370037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d01f51946b98054581bef28106dc16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM: {fileID: 652694459}
   StateManager: {fileID: 1382551429}
+  volumeMultiplier: 0.01
 --- !u!1 &2137416074
 GameObject:
   m_ObjectHideFlags: 0
