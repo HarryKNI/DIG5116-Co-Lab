@@ -30,19 +30,17 @@ public class FPSController : MonoBehaviour
     private float ViewAngle = 85.0f;
 
     [Header("UI HANDLER")]
-    [SerializeField] GameObject PauseMenu;
+    [SerializeField] GameObject GameManager;
     [SerializeField] GameObject CrosshairMenu;
+    [SerializeField] GameObject StateManager;
     public bool shouldCrosshairBeVisable;
-    private bool IsGamePaused;
-    private bool PauseMenuActive;
+
 
     private void Awake()
     {
         GetInput = GetComponent<InputMapSubscriptions>();
         playerCamera = GetComponentInChildren<Camera>();
         characterController = GetComponent<CharacterController>();
-        IsGamePaused = false;
-        PauseMenuActive = false;
     }
 
     private void Start()
@@ -51,7 +49,6 @@ public class FPSController : MonoBehaviour
         //Activating crosshair
         CrosshairMenu.SetActive(shouldCrosshairBeVisable);
     }
-
 
     private void Update()
     {
@@ -67,9 +64,8 @@ public class FPSController : MonoBehaviour
 
     ///<summary>
     /// This will lock the cursor to the center of the screen
-    /// Need to check logic for locking contoller input
     /// </summary>
-    private void LockCursor()
+    public void LockCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -78,12 +74,12 @@ public class FPSController : MonoBehaviour
     ///<summary>
     ///This will unlock the cursor from the center of the screen
     ///</summary>
-    private void UnlockCursor()
+    public void UnlockCursor()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
-
+    
     ///<summary>
     ///This function handles the movement of the player
     ///</summary>
