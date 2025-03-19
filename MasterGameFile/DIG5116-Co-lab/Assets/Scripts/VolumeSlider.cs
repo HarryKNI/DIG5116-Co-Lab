@@ -8,8 +8,8 @@ using UnityEngine.UI;
 public class VolumeSlider : MonoBehaviour
 {
     [Header("Game Objects:")]
-    [SerializeField] private AudioMixer audioMixer;
-    [SerializeField] private Slider volumeSlider;
+    [SerializeField] AudioMixer audioMixer;
+    [SerializeField] Slider volumeSlider;
 
     /// <summary>
     /// This function checks if the player has prefs for volume and sets it to previous settings
@@ -17,15 +17,7 @@ public class VolumeSlider : MonoBehaviour
     /// 
     private void Start()
     {
-        if (!PlayerPrefs.HasKey("musicVolume"))
-        {
-            PlayerPrefs.SetFloat("musicVolume", 1);
-            loadPrefs();
-        }
-        else 
-        {
-            loadPrefs();
-        }
+        loadPrefs();
     }
 
     /// <summary>
@@ -35,18 +27,18 @@ public class VolumeSlider : MonoBehaviour
     /// 
     public void SetAudioLevel(float SliderValue)
     {
-        audioMixer.SetFloat("musicVolume", Mathf.Log10(SliderValue) * 20);
         savePrefs(SliderValue);
+        audioMixer.SetFloat("musicVolume", Mathf.Log10(SliderValue) * 20.0f);
     }
 
     /// <summary>
-    /// This function loads the playerPrefs and sets the volumeSlider to the value
+    /// This function loads the playerPrefs and sets the volumeSlider to the value and defaults to 1 if not present
     /// </summary>
     /// 
     private void loadPrefs()
     {
-        volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
-        audioMixer.SetFloat("musicVolume", PlayerPrefs.GetFloat("musicVolume"));
+        volumeSlider.value = PlayerPrefs.GetFloat("musicVolume", 1);
+        audioMixer.SetFloat("musicVolume", Mathf.Log10(PlayerPrefs.GetFloat("musicVolume", 1)) * 20.0f);
     }
 
     /// <summary>
@@ -56,6 +48,7 @@ public class VolumeSlider : MonoBehaviour
     /// 
     private void savePrefs(float SliderValue)
     {
-        PlayerPrefs.SetFloat("musicVolume", Mathf.Log10(SliderValue) * 20);
+        PlayerPrefs.SetFloat("musicVolume", SliderValue);
+        PlayerPrefs.Save();
     }
 }
