@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
-using UnityEditor;
 
 public class ButtonManager : MonoBehaviour
 {
@@ -17,8 +16,7 @@ public class ButtonManager : MonoBehaviour
 
     [Header("Event system")]
     [SerializeField] private EventSystem _EventSystem;
-
-    public bool shouldFirstUiBeVisable;
+    [SerializeField] private bool shouldFirstUiBeVisable;
 
     private void Start()
     {
@@ -29,16 +27,6 @@ public class ButtonManager : MonoBehaviour
             SetDefaultButton(defaultMenuButton);
         }
         settingUi.SetActive(false);
-    }
-
-    ///<summary>
-    ///This function loads the first level/scene in the game 
-    ///</summary>
-    ///Vennce
-    public void StartGame()
-    {
-        //Need to add first game scene here
-        SceneManager.LoadScene("");
     }
 
     ///<summary>
@@ -62,14 +50,6 @@ public class ButtonManager : MonoBehaviour
         firstMenuUi.SetActive(true);
         SetDefaultButton(defaultMenuButton);
     }
-    ///<summary>
-    ///This function quits the gameVennce
-    ///</summary>
-    ///Vennce
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
 
     ///<summary>
     ///This function sets the default button hover when switching uis
@@ -81,5 +61,24 @@ public class ButtonManager : MonoBehaviour
         _EventSystem.SetSelectedGameObject(null);
         _EventSystem.firstSelectedGameObject = button;
         _EventSystem.SetSelectedGameObject(button);
+    }
+
+    ///<summary>
+    ///This function quits the game
+    ///</summary>
+    ///Vennce
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+    
+    ///<summary>
+    ///This function loads the first level/scene in the game 
+    ///</summary>
+    ///Vennce
+    public void StartGame()
+    {
+        //Need to add first game scene here
+        SceneManager.LoadScene("TestSceneVennce");
     }
 }
