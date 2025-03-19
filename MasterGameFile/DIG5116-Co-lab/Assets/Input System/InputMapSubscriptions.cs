@@ -40,9 +40,6 @@ namespace Vennce
 
             Input.PlayerControls.InteractionBinds.started += SetInteraction;
             Input.PlayerControls.InteractionBinds.canceled += SetInteraction;
-
-            Input.PlayerControls.PauseBinds.started += SetPause;
-            Input.PlayerControls.PauseBinds.canceled += SetPause;
         }
 
         private void OnDisable()
@@ -59,17 +56,13 @@ namespace Vennce
             Input.PlayerControls.InteractionBinds.started -= SetInteraction;
             Input.PlayerControls.InteractionBinds.canceled -= SetInteraction;
 
-            Input.PlayerControls.PauseBinds.started -= SetPause;
-            Input.PlayerControls.PauseBinds.canceled -= SetPause;
-
             Input.PlayerControls.Disable();
         }
 
         private void Update()
         {
-            //These only get called once when pressed, these don't work currently
-            //InteractionBinds = Input.PlayerControls.InteractionBinds.WasPressedThisFrame();
-            //PauseBinds = Input.PlayerControls.PauseBinds.WasPressedThisFrame();
+            //These only get called once when pressed
+            PauseBinds = Input.PlayerControls.PauseBinds.WasPressedThisFrame();
         }
 
         //Calling these functions make them repeat whilst held
@@ -88,10 +81,6 @@ namespace Vennce
         private void SetInteraction(InputAction.CallbackContext context)
         {
             InteractionBinds = context.started;
-        }
-        private void SetPause(InputAction.CallbackContext context)
-        {
-            PauseBinds = context.started;
         }
     }
 

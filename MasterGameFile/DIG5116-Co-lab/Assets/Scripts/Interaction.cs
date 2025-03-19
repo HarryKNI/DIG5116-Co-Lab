@@ -6,18 +6,13 @@ using Vennce;
 public class Interaction : MonoBehaviour
 {
     //Input handlers and holders
-    InputMapSubscriptions GetInput;
+    [SerializeField] InputMapSubscriptions GetInput;
     private bool InteractionButtonPressed;
 
     //Boolean to check if the player can interact with the object
     [Header("Interaction Options")]
     public bool PlayerCanInteract = false;
     public bool CanInteract = true;
-
-    private void Awake()
-    {
-        GetInput = GameObject.Find("---PLAYER---").GetComponent<InputMapSubscriptions>();
-    }
 
     private void Update()
     {
