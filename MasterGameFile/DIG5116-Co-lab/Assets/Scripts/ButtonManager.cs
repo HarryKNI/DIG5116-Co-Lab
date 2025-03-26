@@ -79,6 +79,6 @@ public class ButtonManager : MonoBehaviour
     public void StartGame()
     {
         //Need to add first game scene here
-        SceneManager.LoadScene("TestSceneVennce");
+        SceneManager.LoadScene(1);
     }
 }
