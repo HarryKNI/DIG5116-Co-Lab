@@ -24,15 +24,13 @@ public class FPSController : MonoBehaviour
     [Header("Gravity Parameters")]
     public float Gravity = 30.0f;
 
-    [Header("Movement Speed Parameters")]
+    [Header("Camera Related Parameters")]
     public float Sensitivity = 0.1f;
     private float RotationX = 0.0f;
     private float ViewAngle = 85.0f;
 
-    [Header("UI HANDLER")]
-    [SerializeField] GameObject GameManager;
+    [Header("Crosshair visability Parameters")]
     [SerializeField] GameObject CrosshairMenu;
-    [SerializeField] GameObject StateManager;
     public bool shouldCrosshairBeVisable;
 
 
@@ -56,7 +54,6 @@ public class FPSController : MonoBehaviour
         if (CanMove)
         {
             HandleMovementInput();
-            //HandleCameraInput();
             HandleFPSCamera();
             ApplyFinalMovements();
         }
@@ -113,5 +110,13 @@ public class FPSController : MonoBehaviour
             MovementDirection.y -= Gravity * Time.deltaTime;
         }
         characterController.Move(MovementDirection * Time.deltaTime);
+    }
+
+    ///<summary>
+    ///This function is a setter for sensitivity
+    ///</summary>
+    public void SetSensitivity(float newSensitivity)
+    {
+        Sensitivity = newSensitivity;
     }
 }
