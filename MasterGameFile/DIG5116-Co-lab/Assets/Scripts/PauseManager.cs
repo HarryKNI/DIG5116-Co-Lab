@@ -52,8 +52,7 @@ public class PauseManager : MonoBehaviour
     /// Vennce
     public void PauseGame()
     {
-        Time.timeScale = 0;
-        GameManager.isGamePaused = true;
+        GameManager.PauseGame();
         UiManager.ActivatePauseMenu();
     }
 
@@ -63,8 +62,7 @@ public class PauseManager : MonoBehaviour
     /// Vennce
     public void UnPauseGame()
     {
-        Time.timeScale = 1;
-        GameManager.isGamePaused = false;
+        GameManager.UnPauseGame();
         UiManager.ResumeGame();
     }
 }

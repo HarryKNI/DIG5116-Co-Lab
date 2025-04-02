@@ -56,9 +56,7 @@ public class FPSUiManager : MonoBehaviour
         settingUi.SetActive(false);
         PlayerController.LockCursor();
         PlayerController.CanMove = true;
-        //this is failsafe for when the button is pressed when the game is paused
-        GameManager.isGamePaused = false;
-        Time.timeScale = 1;
+        GameManager.UnPauseGame();
     }
 
     /// <summary>
