@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using TMPro;
+using Unity.VisualScripting;
 public class FPSUiManager : MonoBehaviour
 {
     [Header("Available Ui")]
     [SerializeField] GameObject pauseMenuUi;
     [SerializeField] GameObject settingUi;
+    [SerializeField] GameObject taskUi;
 
     [Header("Button defaults")]
     [SerializeField] GameObject defaultPauseButton;
@@ -21,6 +24,108 @@ public class FPSUiManager : MonoBehaviour
 
     [Header("Game State Checker")]
     [SerializeField] GameManager GameManager;
+
+    [Header("Task Ui Text")]
+    [SerializeField] string Task1Text = "task 1";
+    [SerializeField] string Task2Text = "task 2";
+    [SerializeField] string Task3Text = "task 3";
+    private string Task1Holder;
+    private string Task2Holder;
+    private string Task3Holder;
+    [SerializeField] TMP_Text Task1TextBox;
+    [SerializeField] TMP_Text Task2TextBox;
+    [SerializeField] TMP_Text Task3TextBox;
+
+    private void Start()
+    {
+        SetTaskVisability();
+    }
+
+    private void Update()
+    {
+        UpdateTasks();
+        UpdateTaskVisibility();
+        CheckTaskCompletion();
+    }
+
+    /// <summary>
+    /// This function updates the task text boxes with the current task status
+    /// </summary>
+    private void UpdateTasks()
+    {
+        Task1TextBox.text = Task1Text + ": " + GameManager.Task1Incrementer.ToString() + "/" + GameManager.Task1Limit.ToString();
+        Task1Holder = Task1TextBox.text;
+        Task2TextBox.text = Task2Text + ": " + GameManager.Task2Incrementer.ToString() + "/" + GameManager.Task2Limit.ToString();
+        Task2Holder = Task2TextBox.text;
+        Task3TextBox.text = Task3Text + ": " + GameManager.Task3Incrementer.ToString() + "/" + GameManager.Task3Limit.ToString();
+        Task3Holder = Task3TextBox.text;
+    }
+
+    /// <summary>
+    /// This function sets the task text boxes to be invisible at the start of the game
+    /// </summary>
+    private void SetTaskVisability()
+    {
+        Task2TextBox.alpha = .0f;
+        Task3TextBox.alpha = .0f;
+    }
+
+    /// <summary>
+    /// This function updates the task text boxes to be visible if the previous task is completed
+    /// </summary>
+    private void UpdateTaskVisibility()
+    {
+        if (GameManager.isTask1Completed)
+        {
+            StartCoroutine(FadeInText(Task2TextBox, 1f));
+        }
+        if (GameManager.isTask2Completed)
+        {
+            StartCoroutine(FadeInText(Task3TextBox, 1f));
+        }
+    }
+
+    /// <summary>
+    /// This function fades in the text box over a given duration
+    /// </summary>
+    /// <param name="textBox"></param>
+    /// <param name="duration"></param>
+    private IEnumerator FadeInText(TMP_Text textBox, float duration)
+    {
+        float elapsedTime = 0f;
+        Color color = textBox.color;
+        while (elapsedTime < duration)
+        {
+            color.a = Mathf.Lerp(0f, 1f, elapsedTime / duration);
+            textBox.color = color;
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        color.a = 1f;
+        textBox.color = color;
+    }
+
+
+
+    /// <summary>
+    /// This function checks if the tasks are completed 
+    /// and updates the UI text style to strike-through
+    /// </summary>
+    private void CheckTaskCompletion()
+    {
+        if (GameManager.isTask1Completed)
+        {
+            Task1TextBox.text = $"<s>{Task1Holder}</s>";
+        }
+        if (GameManager.isTask2Completed)
+        {
+            Task2TextBox.text = $"<s>{Task2Holder}</s>";
+        }
+        if (GameManager.isTask3Completed)
+        {
+            Task3TextBox.text = $"<s>{Task3Holder}</s>";
+        }
+    }
 
     /// <summary>
     /// This function opens the pause menu and closes the settings menu if it is open
