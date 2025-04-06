@@ -53,6 +53,7 @@ public class PauseManager : MonoBehaviour
     public void PauseGame()
     {
         GameManager.PauseGame();
+        UiManager.DeactivateTaskUi();
         UiManager.ActivatePauseMenu();
     }
 
@@ -63,6 +64,7 @@ public class PauseManager : MonoBehaviour
     public void UnPauseGame()
     {
         GameManager.UnPauseGame();
+        UiManager.ActivateTaskUi();
         UiManager.ResumeGame();
     }
 }
