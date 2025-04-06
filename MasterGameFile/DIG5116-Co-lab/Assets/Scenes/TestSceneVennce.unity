@@ -4642,15 +4642,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUi: {fileID: 1966458800}
   settingUi: {fileID: 662408484}
-  taskUi: {fileID: 0}
+  taskUi: {fileID: 161084375}
   defaultPauseButton: {fileID: 1130722747}
   defaultSettingsButton: {fileID: 253414973}
   _EventSystem: {fileID: 1016446454}
   PlayerController: {fileID: 1770333519}
   GameManager: {fileID: 1382551429}
-  Task1Text: Collect coffee
-  Task2Text: Collect trash
-  Task3Text: Idk
+  Task1Text: Grab Coffee
+  Task2Text: Do xyz
+  Task3Text: Do zyx
   Task1TextBox: {fileID: 1063515531}
   Task2TextBox: {fileID: 1137092210}
   Task3TextBox: {fileID: 1555143417}

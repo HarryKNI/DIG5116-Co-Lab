@@ -26,9 +26,9 @@ public class FPSUiManager : MonoBehaviour
     [SerializeField] GameManager GameManager;
 
     [Header("Task Ui Text")]
-    [SerializeField] string Task1Text = "task 1";
-    [SerializeField] string Task2Text = "task 2";
-    [SerializeField] string Task3Text = "task 3";
+    [SerializeField] string Task1Text;
+    [SerializeField] string Task2Text;
+    [SerializeField] string Task3Text;
     private string Task1Holder;
     private string Task2Holder;
     private string Task3Holder;
@@ -39,6 +39,7 @@ public class FPSUiManager : MonoBehaviour
     private void Start()
     {
         SetTaskVisability();
+
     }
 
     private void Update()
@@ -53,12 +54,37 @@ public class FPSUiManager : MonoBehaviour
     /// </summary>
     private void UpdateTasks()
     {
-        Task1TextBox.text = Task1Text + ": " + GameManager.Task1Incrementer.ToString() + "/" + GameManager.Task1Limit.ToString();
-        Task1Holder = Task1TextBox.text;
-        Task2TextBox.text = Task2Text + ": " + GameManager.Task2Incrementer.ToString() + "/" + GameManager.Task2Limit.ToString();
-        Task2Holder = Task2TextBox.text;
-        Task3TextBox.text = Task3Text + ": " + GameManager.Task3Incrementer.ToString() + "/" + GameManager.Task3Limit.ToString();
-        Task3Holder = Task3TextBox.text;
+        if (string.IsNullOrEmpty(Task1Text))
+        {
+            Task1TextBox.text = "";
+            Task1Holder = Task1TextBox.text;
+        }
+        else
+        {
+            Task1TextBox.text = Task1Text + ": " + GameManager.Task1Incrementer.ToString() + "/" + GameManager.Task1Limit.ToString();
+            Task1Holder = Task1TextBox.text;
+        }
+        if (string.IsNullOrEmpty(Task2Text))
+        {
+            Task2TextBox.text = "";
+            Task2Holder = Task2TextBox.text;
+        }
+        else
+        {
+            Task2TextBox.text = Task2Text + ": " + GameManager.Task2Incrementer.ToString() + "/" + GameManager.Task2Limit.ToString();
+            Task2Holder = Task2TextBox.text;
+        }
+        if (string.IsNullOrEmpty(Task3Text))
+        {
+            Task3TextBox.text = "";
+            Task3Holder = Task3TextBox.text;
+        }
+        else
+        {
+            Task3TextBox.text = Task3Text + ": " + GameManager.Task3Incrementer.ToString() + "/" + GameManager.Task3Limit.ToString();
+            Task3Holder = Task3TextBox.text;
+        }
+
     }
 
     /// <summary>
@@ -152,6 +178,22 @@ public class FPSUiManager : MonoBehaviour
     }
 
     /// <summary>
+    /// This function opens the task UI
+    /// </summary>
+    public void ActivateTaskUi()
+    {
+        taskUi.SetActive(true);
+    }
+
+    /// <summary>
+    /// This function closes the task UI
+    /// </summary>
+    public void DeactivateTaskUi()
+    {
+        taskUi.SetActive(false);
+    }
+
+    /// <summary>
     /// This function resumes the game
     /// </summary>
     /// Vennce
@@ -159,6 +201,7 @@ public class FPSUiManager : MonoBehaviour
     {
         pauseMenuUi.SetActive(false);
         settingUi.SetActive(false);
+        taskUi.SetActive(true);
         PlayerController.LockCursor();
         PlayerController.CanMove = true;
         GameManager.UnPauseGame();
