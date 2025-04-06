@@ -29,17 +29,19 @@ public class FPSUiManager : MonoBehaviour
     [SerializeField] string Task1Text;
     [SerializeField] string Task2Text;
     [SerializeField] string Task3Text;
+    [SerializeField] string CompletionText;
     private string Task1Holder;
     private string Task2Holder;
     private string Task3Holder;
     [SerializeField] TMP_Text Task1TextBox;
     [SerializeField] TMP_Text Task2TextBox;
     [SerializeField] TMP_Text Task3TextBox;
+    [SerializeField] TMP_Text CompletionTextBox;
 
     private void Start()
     {
         SetTaskVisability();
-
+        CompletionTextBox.text = "";
     }
 
     private void Update()
@@ -94,6 +96,7 @@ public class FPSUiManager : MonoBehaviour
     {
         Task2TextBox.alpha = .0f;
         Task3TextBox.alpha = .0f;
+        CompletionTextBox.alpha = .0f;
     }
 
     /// <summary>
@@ -151,6 +154,13 @@ public class FPSUiManager : MonoBehaviour
         {
             Task3TextBox.text = $"<s>{Task3Holder}</s>";
         }
+        if (GameManager.isTask1Completed && GameManager.isTask2Completed && GameManager.isTask3Completed)
+        {
+            Debug.Log("cakked");
+            CompletionTextBox.text = CompletionText;
+            StartCoroutine(FadeInText(CompletionTextBox, 1f));
+        }
+
     }
 
     /// <summary>
