@@ -17,9 +17,9 @@ public class GameManager : MonoBehaviour
     public int Task3Incrementer = 0;
 
     [Header("Task Limit Ints")]
-    [SerializeField] int Task1Limit = 0;
-    [SerializeField] int Task2Limit = 0;
-    [SerializeField] int Task3Limit = 0;
+    [SerializeField] public int Task1Limit = 0;
+    [SerializeField] public int Task2Limit = 0;
+    [SerializeField] public int Task3Limit = 0;
 
     private void Update()
     {
