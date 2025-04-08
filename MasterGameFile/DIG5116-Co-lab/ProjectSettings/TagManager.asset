@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactable
   - Collider
+  - AudioSource
   layers:
   - Default
   - TransparentFX
