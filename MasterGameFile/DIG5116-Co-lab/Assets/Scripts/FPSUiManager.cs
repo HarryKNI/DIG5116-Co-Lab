@@ -156,7 +156,6 @@ public class FPSUiManager : MonoBehaviour
         }
         if (GameManager.isTask1Completed && GameManager.isTask2Completed && GameManager.isTask3Completed)
         {
-            Debug.Log("cakked");
             CompletionTextBox.text = CompletionText;
             StartCoroutine(FadeInText(CompletionTextBox, 1f));
         }
