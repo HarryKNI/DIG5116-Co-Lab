@@ -3902,7 +3902,7 @@ PrefabInstance:
       objectReference: {fileID: 1838149394}
     - target: {fileID: 3794049617795800131, guid: 686c7d0135a877740930abca046d1084, type: 3}
       propertyPath: SceneString
-      value: Park Scene
+      value: Homeless SIfa Scene
       objectReference: {fileID: 0}
     - target: {fileID: 4984592713067396395, guid: 686c7d0135a877740930abca046d1084, type: 3}
       propertyPath: m_Size.x
@@ -10897,7 +10897,7 @@ PrefabInstance:
       objectReference: {fileID: 1444421232}
     - target: {fileID: 2095742631754488132, guid: 119257e5eba835d4a96a5b74954dc14c, type: 3}
       propertyPath: CompletionText
-      value: Head back to the park camp
+      value: Head to SIFA Fireside
       objectReference: {fileID: 0}
     - target: {fileID: 2095742631754488132, guid: 119257e5eba835d4a96a5b74954dc14c, type: 3}
       propertyPath: PlayerController

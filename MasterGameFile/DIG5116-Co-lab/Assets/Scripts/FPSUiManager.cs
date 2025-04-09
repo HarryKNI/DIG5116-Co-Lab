@@ -224,7 +224,7 @@ public class FPSUiManager : MonoBehaviour
     {
         //Need to add main menu scene here
         Time.timeScale = 1;
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("MainMenu");
     }
 
     /// <summary>

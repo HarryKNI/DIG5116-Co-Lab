@@ -3919,7 +3919,7 @@ PrefabInstance:
       objectReference: {fileID: 847033088}
     - target: {fileID: 3794049617795800131, guid: 686c7d0135a877740930abca046d1084, type: 3}
       propertyPath: SceneString
-      value: Park Scene
+      value: MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 4984592713067396395, guid: 686c7d0135a877740930abca046d1084, type: 3}
       propertyPath: m_Size.z
@@ -5910,7 +5910,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2095742631754488132, guid: 119257e5eba835d4a96a5b74954dc14c, type: 3}
       propertyPath: Task1Text
-      value: Grab some food
+      value: Ask for some food
       objectReference: {fileID: 0}
     - target: {fileID: 2095742631754488132, guid: 119257e5eba835d4a96a5b74954dc14c, type: 3}
       propertyPath: Task2Text
@@ -5918,7 +5918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2095742631754488132, guid: 119257e5eba835d4a96a5b74954dc14c, type: 3}
       propertyPath: Task3Text
-      value: Hand in documents
+      value: Ask for help from SIFA
       objectReference: {fileID: 0}
     - target: {fileID: 2095742631754488132, guid: 119257e5eba835d4a96a5b74954dc14c, type: 3}
       propertyPath: GameManager
@@ -5930,7 +5930,7 @@ PrefabInstance:
       objectReference: {fileID: 197417494}
     - target: {fileID: 2095742631754488132, guid: 119257e5eba835d4a96a5b74954dc14c, type: 3}
       propertyPath: CompletionText
-      value: Head out!
+      value: Head back to camp
       objectReference: {fileID: 0}
     - target: {fileID: 2095742631754488132, guid: 119257e5eba835d4a96a5b74954dc14c, type: 3}
       propertyPath: PlayerController
