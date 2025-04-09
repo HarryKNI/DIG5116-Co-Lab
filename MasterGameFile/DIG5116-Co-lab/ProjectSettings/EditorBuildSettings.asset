@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SIfa Scene.unity
     guid: a7e2dbc155a774f42859eb357d94ad3b
   - enabled: 1
+    path: Assets/Scenes/HomelessStreetScene.unity
+    guid: e1354331c8f9b794da7dba4b1e96a7d0
+  - enabled: 1
     path: Assets/Scenes/Park Scene.unity
     guid: aaed4d7223455ae438b5c7fe8b4c6260
   m_configObjects: {}

@@ -52,7 +52,6 @@ public class SceneSwitcher : MonoBehaviour
     {
         if (GameManager.isTask1Completed && GameManager.isTask2Completed && GameManager.isTask3Completed)
         {
-            Debug.Log("Player can interact with the object");
             SetObjectVisability(true);
             CanInteract = true;
         }
@@ -60,7 +59,7 @@ public class SceneSwitcher : MonoBehaviour
 
     private void HandleSceneSwitch(string Scene)
     {
-        SceneManager.LoadScene(Scene);
+        SceneManager.LoadSceneAsync(Scene);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
