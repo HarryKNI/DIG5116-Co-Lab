@@ -18,6 +18,8 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] private EventSystem _EventSystem;
     [SerializeField] private bool shouldFirstUiBeVisable;
 
+    [Header("Scene to switch to")]
+    [SerializeField] private string sceneToSwitchTo;
     private void Start()
     {
         //this disables the view of the settings ui
@@ -79,6 +81,6 @@ public class ButtonManager : MonoBehaviour
     public void StartGame()
     {
         //Need to add first game scene here
-        SceneManager.LoadScene("TestSceneVennce");
+        SceneManager.LoadScene(sceneToSwitchTo);
     }
 }
