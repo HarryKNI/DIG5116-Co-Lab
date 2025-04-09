@@ -78,6 +78,7 @@ public class Interaction : MonoBehaviour
     /// </summary>
     private IEnumerator ShrinkAndDestroy()
     {
+        gameObject.GetComponent<CapsuleCollider>().enabled = false;
         Vector3 originalScale = transform.localScale;
         float elapsedTime = 0.0f;
         while (elapsedTime < ShrinkDuration)
@@ -103,17 +104,29 @@ public class Interaction : MonoBehaviour
                 {
                     SetObjectVisability(true);
                 }
+                if (GameManager.isTask1Completed)
+                {
+                    HandleDestroy();
+                }
                 break;
             case 2:
                 if (GameManager.isTask1Completed && !GameManager.isTask2Completed && !GameManager.isTask3Completed)
                 {
                     SetObjectVisability(true);
                 }
+                if (GameManager.isTask2Completed)
+                {
+                    HandleDestroy();
+                }
                 break;
             case 3:
                 if (GameManager.isTask1Completed && GameManager.isTask2Completed && !GameManager.isTask3Completed)
                 {
                     SetObjectVisability(true);
+                }
+                if (GameManager.isTask3Completed)
+                {
+                    HandleDestroy();
                 }
                 break;
             default:

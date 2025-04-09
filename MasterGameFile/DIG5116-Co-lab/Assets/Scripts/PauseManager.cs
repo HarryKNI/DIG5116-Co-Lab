@@ -14,6 +14,7 @@ public class PauseManager : MonoBehaviour
 
     [Header("Input Manager")]
     [SerializeField] InputMapSubscriptions GetInput;
+    [SerializeField] FPSController PlayerController;
 
     private void Update()
     {
@@ -32,6 +33,7 @@ public class PauseManager : MonoBehaviour
                 {
                     if (GameManager.isGamePaused)
                     {
+                        
                         UnPauseGame();
                     }
                     else
@@ -52,6 +54,8 @@ public class PauseManager : MonoBehaviour
     /// Vennce
     public void PauseGame()
     {
+        PlayerController.UnlockCursor();
+        PlayerController.CanMove = false;
         GameManager.PauseGame();
         UiManager.DeactivateTaskUi();
         UiManager.ActivatePauseMenu();
@@ -63,6 +67,8 @@ public class PauseManager : MonoBehaviour
     /// Vennce
     public void UnPauseGame()
     {
+        PlayerController.LockCursor();
+        PlayerController.CanMove = true;
         GameManager.UnPauseGame();
         UiManager.ActivateTaskUi();
         UiManager.ResumeGame();
