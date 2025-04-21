@@ -21,8 +21,13 @@ public class Interaction : MonoBehaviour
     [Header("SFX Options")]
     [SerializeField] float ShrinkDuration = 1f;
     [SerializeField] float MinScale = 0.1f;
+    [SerializeField] Transform ObjectModel;
     [SerializeField] AudioClip PickUpSound;
-    [SerializeField] AudioClip DestroySound;
+
+    [Header("Game Objects")]
+    [SerializeField] MeshRenderer ArrowModel;
+    [SerializeField] MeshRenderer IndicatorModel;
+
     private void Start()
     {
         SetObjectVisability(false);
@@ -44,6 +49,7 @@ public class Interaction : MonoBehaviour
         //this makes the player only be able to interact once with this object
         CanInteract = false;
         Debug.Log("Player has interacted with the object");
+        AudioSource.PlayClipAtPoint(PickUpSound, transform.position);
         HandleDestroy();
     }
 
@@ -79,16 +85,16 @@ public class Interaction : MonoBehaviour
     private IEnumerator ShrinkAndDestroy()
     {
         gameObject.GetComponent<CapsuleCollider>().enabled = false;
-        Vector3 originalScale = transform.localScale;
+        Vector3 originalScale = ObjectModel.localScale;
         float elapsedTime = 0.0f;
         while (elapsedTime < ShrinkDuration)
         {
             float scale = Mathf.Lerp(originalScale.x, MinScale, elapsedTime / ShrinkDuration);
-            transform.localScale = new Vector3(scale, scale, scale);
+            ObjectModel.localScale = new Vector3(scale, scale, scale);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        transform.localScale = Vector3.zero;
+        ObjectModel.localScale = Vector3.zero;
         gameObject.SetActive(false);
         Destroy(gameObject, 4f);
     }
@@ -139,8 +145,9 @@ public class Interaction : MonoBehaviour
     /// </summary>
     private void SetObjectVisability(bool state)
     {
-        gameObject.GetComponent<MeshRenderer>().enabled = state;
-        gameObject.GetComponent<CapsuleCollider>().enabled = state;
+        ArrowModel.GetComponent<MeshRenderer>().enabled = state;
+        IndicatorModel.GetComponent<MeshRenderer>().enabled = state;
+        gameObject.GetComponentInChildren<CapsuleCollider>().enabled = state;
     }
 
     private void OnTriggerEnter(Collider other)
