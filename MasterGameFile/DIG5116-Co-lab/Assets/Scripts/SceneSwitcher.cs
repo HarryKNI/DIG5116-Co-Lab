@@ -20,6 +20,10 @@ public class SceneSwitcher : MonoBehaviour
     [SerializeField] InputMapSubscriptions GetInput;
     private bool InteractionButtonPressed;
 
+    [Header("Game Objects")]
+    [SerializeField] MeshRenderer ArrowModel;
+    [SerializeField] MeshRenderer IndicatorModel;
+
     private void Start()
     {
         SetObjectVisability(false);
@@ -48,6 +52,18 @@ public class SceneSwitcher : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        switch (other.tag)
+        {
+            case "Player":
+                PlayerCanInteract = false;
+                break;
+            default:
+                break;
+        }
+    }
+
     private void CheckIfCanInteract()
     {
         if (GameManager.isTask1Completed && GameManager.isTask2Completed && GameManager.isTask3Completed)
@@ -66,7 +82,8 @@ public class SceneSwitcher : MonoBehaviour
 
     private void SetObjectVisability(bool state)
     {
-        gameObject.GetComponentInChildren<MeshRenderer>().enabled = state;
+        ArrowModel.GetComponent<MeshRenderer>().enabled = state;
+        IndicatorModel.GetComponent<MeshRenderer>().enabled = state;
         gameObject.GetComponent<BoxCollider>().enabled = state;
     }
 }
