@@ -16,6 +16,7 @@ public class Interaction : MonoBehaviour
 
     [Header("Task Related Options")]
     [SerializeField] GameManager GameManager;
+    [SerializeField] FPSUiManager FPSUiManager;
     [SerializeField] int TaskNumber;
 
     [Header("SFX Options")]
@@ -30,15 +31,19 @@ public class Interaction : MonoBehaviour
 
     private void Start()
     {
+        FPSUiManager = GameObject.Find("UIManager").GetComponent<FPSUiManager>();
+
+        FPSUiManager.SetInteractUiVisability(false);
         SetObjectVisability(false);
     }
     private void Update()
     {
         UpdateVisibility();
-
+        
         InteractionButtonPressed = GetInput.InteractionBinds;
         if (PlayerCanInteract && InteractionButtonPressed && CanInteract)
         {
+            SetInteractUi(false);
             HandleInteraction();
             IncrementTask();
         }
@@ -150,12 +155,18 @@ public class Interaction : MonoBehaviour
         gameObject.GetComponentInChildren<CapsuleCollider>().enabled = state;
     }
 
+    private void SetInteractUi(bool state)
+    {
+        FPSUiManager.SetInteractUiVisability(state);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         switch (other.tag)
         {
             case "Player":
                 PlayerCanInteract = true;
+                SetInteractUi(PlayerCanInteract);
                 break;
             default:
                 break;
@@ -167,6 +178,7 @@ public class Interaction : MonoBehaviour
         {
             case "Player":
                 PlayerCanInteract = false;
+                SetInteractUi(PlayerCanInteract);
                 break;
             default:
                 break;

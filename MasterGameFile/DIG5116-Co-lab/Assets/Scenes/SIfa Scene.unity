@@ -2689,6 +2689,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 18fee2f055332e84da99d9e04e21c43d, type: 3}
     - target: {fileID: 1762777434865148058, guid: 1df437756c01ec14a9f7815aaaa81942, type: 3}
+      propertyPath: FPSUiManager
+      value: 
+      objectReference: {fileID: 290462425}
+    - target: {fileID: 1762777434865148058, guid: 1df437756c01ec14a9f7815aaaa81942, type: 3}
       propertyPath: IndicatorModel
       value: 
       objectReference: {fileID: 450044329}
@@ -2827,6 +2831,7 @@ Transform:
   - {fileID: 1596482768}
   - {fileID: 1356926667}
   - {fileID: 146095140}
+  - {fileID: 1378394467}
   m_Father: {fileID: 1931002008}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &497673545
@@ -3449,6 +3454,10 @@ PrefabInstance:
       propertyPath: PickUpSound
       value: 
       objectReference: {fileID: 8300000, guid: 18fee2f055332e84da99d9e04e21c43d, type: 3}
+    - target: {fileID: 1762777434865148058, guid: 1df437756c01ec14a9f7815aaaa81942, type: 3}
+      propertyPath: FPSUiManager
+      value: 
+      objectReference: {fileID: 290462425}
     - target: {fileID: 1762777434865148058, guid: 1df437756c01ec14a9f7815aaaa81942, type: 3}
       propertyPath: IndicatorModel
       value: 
@@ -4146,6 +4155,10 @@ PrefabInstance:
       propertyPath: PickUpSound
       value: 
       objectReference: {fileID: 8300000, guid: 51de7540076b1334cbc9def55a42a06c, type: 3}
+    - target: {fileID: 1762777434865148058, guid: 1df437756c01ec14a9f7815aaaa81942, type: 3}
+      propertyPath: FPSUiManager
+      value: 
+      objectReference: {fileID: 290462425}
     - target: {fileID: 1762777434865148058, guid: 1df437756c01ec14a9f7815aaaa81942, type: 3}
       propertyPath: IndicatorModel
       value: 
@@ -5986,6 +5999,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 51de7540076b1334cbc9def55a42a06c, type: 3}
     - target: {fileID: 1762777434865148058, guid: 1df437756c01ec14a9f7815aaaa81942, type: 3}
+      propertyPath: FPSUiManager
+      value: 
+      objectReference: {fileID: 290462425}
+    - target: {fileID: 1762777434865148058, guid: 1df437756c01ec14a9f7815aaaa81942, type: 3}
       propertyPath: IndicatorModel
       value: 
       objectReference: {fileID: 1163047912}
@@ -6341,6 +6358,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 188076258}
     - target: {fileID: 3794049617795800131, guid: 686c7d0135a877740930abca046d1084, type: 3}
+      propertyPath: interactUi
+      value: 
+      objectReference: {fileID: 1568828541}
+    - target: {fileID: 3794049617795800131, guid: 686c7d0135a877740930abca046d1084, type: 3}
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 847033088}
@@ -6348,6 +6369,10 @@ PrefabInstance:
       propertyPath: SceneString
       value: Park Scene
       objectReference: {fileID: 0}
+    - target: {fileID: 3794049617795800131, guid: 686c7d0135a877740930abca046d1084, type: 3}
+      propertyPath: FPSUiManager
+      value: 
+      objectReference: {fileID: 290462425}
     - target: {fileID: 3794049617795800131, guid: 686c7d0135a877740930abca046d1084, type: 3}
       propertyPath: IndicatorModel
       value: 
@@ -6401,6 +6426,10 @@ PrefabInstance:
       propertyPath: PickUpSound
       value: 
       objectReference: {fileID: 8300000, guid: 18fee2f055332e84da99d9e04e21c43d, type: 3}
+    - target: {fileID: 1762777434865148058, guid: 1df437756c01ec14a9f7815aaaa81942, type: 3}
+      propertyPath: FPSUiManager
+      value: 
+      objectReference: {fileID: 290462425}
     - target: {fileID: 1762777434865148058, guid: 1df437756c01ec14a9f7815aaaa81942, type: 3}
       propertyPath: IndicatorModel
       value: 
@@ -6862,7 +6891,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1931002008}
+  m_Father: {fileID: 479586672}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1378394468
 BoxCollider:
@@ -7532,6 +7561,10 @@ PrefabInstance:
       propertyPath: PickUpSound
       value: 
       objectReference: {fileID: 8300000, guid: 2780f1a73254925448f2d56e846607ad, type: 3}
+    - target: {fileID: 1762777434865148058, guid: 1df437756c01ec14a9f7815aaaa81942, type: 3}
+      propertyPath: FPSUiManager
+      value: 
+      objectReference: {fileID: 290462425}
     - target: {fileID: 1762777434865148058, guid: 1df437756c01ec14a9f7815aaaa81942, type: 3}
       propertyPath: IndicatorModel
       value: 
@@ -8619,6 +8652,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 51de7540076b1334cbc9def55a42a06c, type: 3}
     - target: {fileID: 1762777434865148058, guid: 1df437756c01ec14a9f7815aaaa81942, type: 3}
+      propertyPath: FPSUiManager
+      value: 
+      objectReference: {fileID: 290462425}
+    - target: {fileID: 1762777434865148058, guid: 1df437756c01ec14a9f7815aaaa81942, type: 3}
       propertyPath: IndicatorModel
       value: 
       objectReference: {fileID: 1526970979}
@@ -8883,6 +8920,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 119257e5eba835d4a96a5b74954dc14c, type: 3}
+--- !u!1 &1568828541 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4066274540148014821, guid: 119257e5eba835d4a96a5b74954dc14c, type: 3}
+  m_PrefabInstance: {fileID: 1568828540}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1583496775
 GameObject:
   m_ObjectHideFlags: 0
@@ -9925,6 +9967,10 @@ PrefabInstance:
       propertyPath: PickUpSound
       value: 
       objectReference: {fileID: 8300000, guid: 18fee2f055332e84da99d9e04e21c43d, type: 3}
+    - target: {fileID: 1762777434865148058, guid: 1df437756c01ec14a9f7815aaaa81942, type: 3}
+      propertyPath: FPSUiManager
+      value: 
+      objectReference: {fileID: 290462425}
     - target: {fileID: 1762777434865148058, guid: 1df437756c01ec14a9f7815aaaa81942, type: 3}
       propertyPath: IndicatorModel
       value: 
@@ -12153,7 +12199,6 @@ Transform:
   m_Children:
   - {fileID: 1534545737}
   - {fileID: 479586672}
-  - {fileID: 1378394467}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1933677414 stripped

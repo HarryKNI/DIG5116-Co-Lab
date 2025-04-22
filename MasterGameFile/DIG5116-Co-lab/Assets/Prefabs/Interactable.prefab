@@ -89,6 +89,8 @@ MonoBehaviour:
   MinScale: 0.1
   ObjectModel: {fileID: 3612614074941872665}
   PickUpSound: {fileID: 8300000, guid: 4f63540166662a044a5b57f1246edc53, type: 3}
+  ArrowModel: {fileID: 4431722051074340876}
+  IndicatorModel: {fileID: 4355194821905019451}
 --- !u!136 &8355113859038693202
 CapsuleCollider:
   m_ObjectHideFlags: 0
