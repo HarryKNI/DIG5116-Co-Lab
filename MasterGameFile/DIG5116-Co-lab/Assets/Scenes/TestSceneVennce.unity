@@ -629,8 +629,10 @@ MonoBehaviour:
   TaskNumber: 2
   ShrinkDuration: 1
   MinScale: 0.1
-  PickUpSound: {fileID: 0}
-  DestroySound: {fileID: 0}
+  ObjectModel: {fileID: 280595799}
+  PickUpSound: {fileID: 8300000, guid: b28a4afd49de7ff44a46e2b2cfafc119, type: 3}
+  ArrowModel: {fileID: 143084836}
+  IndicatorModel: {fileID: 143084836}
 --- !u!136 &143084835
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -918,6 +920,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253414973}
   m_CullTransparentMesh: 1
+--- !u!1 &280595798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 280595799}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &280595799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280595798}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 429437865}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &429437864
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,6 +984,7 @@ Transform:
   - {fileID: 1474922739}
   - {fileID: 143084833}
   - {fileID: 1363356689}
+  - {fileID: 280595799}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &567760473
@@ -1287,6 +1321,11 @@ CanvasRenderer:
 --- !u!4 &690478217 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 198289743578669913, guid: 1729cb336ca120b46bba64d28fbf58a7, type: 3}
+  m_PrefabInstance: {fileID: 7721674345242178259}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &690478220 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3775281132092982545, guid: 1729cb336ca120b46bba64d28fbf58a7, type: 3}
   m_PrefabInstance: {fileID: 7721674345242178259}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &713690503
@@ -2739,6 +2778,11 @@ CanvasRenderer:
 --- !u!4 &1363356689 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2362248942794036159, guid: 2fe2de3630c688349a9e4505f9c82f63, type: 3}
+  m_PrefabInstance: {fileID: 4845942853744567949}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1363356692 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6694962657098707737, guid: 2fe2de3630c688349a9e4505f9c82f63, type: 3}
   m_PrefabInstance: {fileID: 4845942853744567949}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1382551428 stripped
@@ -4363,6 +4407,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c631bd86d52e4646b97666f4ba156d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!23 &2132612609 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 766012798575366174, guid: c949fe37e107e5949a0b340804ee5031, type: 3}
+  m_PrefabInstance: {fileID: 7943919856064840526}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2137416074
 GameObject:
   m_ObjectHideFlags: 0
@@ -4472,6 +4521,10 @@ PrefabInstance:
       propertyPath: UiManager
       value: 
       objectReference: {fileID: 2015151834}
+    - target: {fileID: 2404800685550864406, guid: d18f0947bce80f545a16575651a9c109, type: 3}
+      propertyPath: PlayerController
+      value: 
+      objectReference: {fileID: 1770333519}
     - target: {fileID: 8513878980077984316, guid: d18f0947bce80f545a16575651a9c109, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4587,9 +4640,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1770333520}
     - target: {fileID: 2295873590498081604, guid: 2fe2de3630c688349a9e4505f9c82f63, type: 3}
+      propertyPath: ArrowModel
+      value: 
+      objectReference: {fileID: 1363356692}
+    - target: {fileID: 2295873590498081604, guid: 2fe2de3630c688349a9e4505f9c82f63, type: 3}
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 1382551429}
+    - target: {fileID: 2295873590498081604, guid: 2fe2de3630c688349a9e4505f9c82f63, type: 3}
+      propertyPath: ObjectModel
+      value: 
+      objectReference: {fileID: 280595799}
+    - target: {fileID: 2295873590498081604, guid: 2fe2de3630c688349a9e4505f9c82f63, type: 3}
+      propertyPath: PickUpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b28a4afd49de7ff44a46e2b2cfafc119, type: 3}
+    - target: {fileID: 2295873590498081604, guid: 2fe2de3630c688349a9e4505f9c82f63, type: 3}
+      propertyPath: IndicatorModel
+      value: 
+      objectReference: {fileID: 1363356692}
     - target: {fileID: 2362248942794036159, guid: 2fe2de3630c688349a9e4505f9c82f63, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.93
@@ -4753,9 +4822,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1770333520}
     - target: {fileID: 8561690110137410445, guid: 1729cb336ca120b46bba64d28fbf58a7, type: 3}
+      propertyPath: ArrowModel
+      value: 
+      objectReference: {fileID: 690478220}
+    - target: {fileID: 8561690110137410445, guid: 1729cb336ca120b46bba64d28fbf58a7, type: 3}
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 1382551429}
+    - target: {fileID: 8561690110137410445, guid: 1729cb336ca120b46bba64d28fbf58a7, type: 3}
+      propertyPath: ObjectModel
+      value: 
+      objectReference: {fileID: 280595799}
+    - target: {fileID: 8561690110137410445, guid: 1729cb336ca120b46bba64d28fbf58a7, type: 3}
+      propertyPath: PickUpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b28a4afd49de7ff44a46e2b2cfafc119, type: 3}
+    - target: {fileID: 8561690110137410445, guid: 1729cb336ca120b46bba64d28fbf58a7, type: 3}
+      propertyPath: IndicatorModel
+      value: 
+      objectReference: {fileID: 690478220}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4774,9 +4859,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1770333520}
     - target: {fileID: 3621367434334397448, guid: c949fe37e107e5949a0b340804ee5031, type: 3}
+      propertyPath: ArrowModel
+      value: 
+      objectReference: {fileID: 2132612609}
+    - target: {fileID: 3621367434334397448, guid: c949fe37e107e5949a0b340804ee5031, type: 3}
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 1382551429}
+    - target: {fileID: 3621367434334397448, guid: c949fe37e107e5949a0b340804ee5031, type: 3}
+      propertyPath: ObjectModel
+      value: 
+      objectReference: {fileID: 280595799}
+    - target: {fileID: 3621367434334397448, guid: c949fe37e107e5949a0b340804ee5031, type: 3}
+      propertyPath: PickUpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b28a4afd49de7ff44a46e2b2cfafc119, type: 3}
+    - target: {fileID: 3621367434334397448, guid: c949fe37e107e5949a0b340804ee5031, type: 3}
+      propertyPath: IndicatorModel
+      value: 
+      objectReference: {fileID: 2132612609}
     - target: {fileID: 4137680595754269252, guid: c949fe37e107e5949a0b340804ee5031, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.34
