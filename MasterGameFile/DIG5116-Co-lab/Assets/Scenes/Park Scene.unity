@@ -5056,6 +5056,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &744739386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4066274540148014821, guid: 119257e5eba835d4a96a5b74954dc14c, type: 3}
+  m_PrefabInstance: {fileID: 744739382}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &748886402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5398,6 +5403,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 711882618}
     - target: {fileID: 3794049617795800131, guid: 686c7d0135a877740930abca046d1084, type: 3}
+      propertyPath: interactUi
+      value: 
+      objectReference: {fileID: 744739386}
+    - target: {fileID: 3794049617795800131, guid: 686c7d0135a877740930abca046d1084, type: 3}
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 862276762}
@@ -5405,6 +5414,10 @@ PrefabInstance:
       propertyPath: SceneString
       value: HomelessStreetScene
       objectReference: {fileID: 0}
+    - target: {fileID: 3794049617795800131, guid: 686c7d0135a877740930abca046d1084, type: 3}
+      propertyPath: FPSUiManager
+      value: 
+      objectReference: {fileID: 744739383}
     - target: {fileID: 4984592713067396395, guid: 686c7d0135a877740930abca046d1084, type: 3}
       propertyPath: m_Size.x
       value: 5

@@ -6048,6 +6048,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1235133479}
     - target: {fileID: 3794049617795800131, guid: 686c7d0135a877740930abca046d1084, type: 3}
+      propertyPath: interactUi
+      value: 
+      objectReference: {fileID: 1568828541}
+    - target: {fileID: 3794049617795800131, guid: 686c7d0135a877740930abca046d1084, type: 3}
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 847033088}
@@ -6055,6 +6059,10 @@ PrefabInstance:
       propertyPath: SceneString
       value: MainMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 3794049617795800131, guid: 686c7d0135a877740930abca046d1084, type: 3}
+      propertyPath: FPSUiManager
+      value: 
+      objectReference: {fileID: 290462425}
     - target: {fileID: 3794049617795800131, guid: 686c7d0135a877740930abca046d1084, type: 3}
       propertyPath: IndicatorModel
       value: 
@@ -9356,6 +9364,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 119257e5eba835d4a96a5b74954dc14c, type: 3}
+--- !u!1 &1568828541 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4066274540148014821, guid: 119257e5eba835d4a96a5b74954dc14c, type: 3}
+  m_PrefabInstance: {fileID: 1568828540}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1570584508 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1382332395967909793, guid: f8fef19f2f428354ea09fb5d4df28731, type: 3}
