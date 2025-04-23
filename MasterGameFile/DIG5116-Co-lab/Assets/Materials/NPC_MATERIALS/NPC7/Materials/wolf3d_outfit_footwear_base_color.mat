@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: wolf3d_outfit_bottom_base_color
+  m_Name: wolf3d_outfit_footwear_base_color
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -26,7 +26,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 022a95c440c76ec458dc4c3f117f8f9c, type: 3}
+        m_Texture: {fileID: 2800000, guid: d68e29b6c7ca9134bba07c1dd788defb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -46,15 +46,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: b0d8781c271ec01468e6d73e53782819, type: 3}
+        m_Texture: {fileID: 2800000, guid: aff3bdb78b749dd47a4ba0a34cb44d79, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: fd2c5faf84468604fa5e3c41a955ea6a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 46c9aab76147a124a8c7c35ea471a82f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: 3bd54a7101af02a4e9cae8c125bf5605, type: 3}
+        m_Texture: {fileID: 2800000, guid: d4ea28e99318c414a99e75ef8d93f438, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
