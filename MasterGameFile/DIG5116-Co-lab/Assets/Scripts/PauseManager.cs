@@ -31,14 +31,17 @@ public class PauseManager : MonoBehaviour
         {
             case true:
                 {
-                    if (GameManager.isGamePaused)
+                    if (GameManager.disablePausing == false)
                     {
-                        
-                        UnPauseGame();
-                    }
-                    else
-                    {
-                        PauseGame();
+                        if (GameManager.isGamePaused)
+                        {
+
+                            UnPauseGame();
+                        }
+                        else
+                        {
+                            PauseGame();
+                        }
                     }
                     break;
                 }
