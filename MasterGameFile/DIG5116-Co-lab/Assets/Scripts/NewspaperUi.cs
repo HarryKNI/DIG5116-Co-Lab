@@ -8,6 +8,7 @@ public class NewspaperUi : MonoBehaviour
     [Header("Available Ui")]
     [SerializeField] GameObject TaskUi;
     [SerializeField] GameObject NpUi;
+    [SerializeField] GameObject CrosshairUi;
 
     [Header("Button defaults")]
     [SerializeField] GameObject defaultButton;
@@ -35,6 +36,7 @@ public class NewspaperUi : MonoBehaviour
     private void ActivateNewspaperUi()
     {
         TaskUi.SetActive(false);
+        CrosshairUi.SetActive(false);
         NpUi.SetActive(true);
         SetDefaultButton(defaultButton);
         PlayerController.UnlockCursor();
@@ -46,6 +48,7 @@ public class NewspaperUi : MonoBehaviour
     public void DeactivateNewspaperUi()
     {
         TaskUi.SetActive(true);
+        CrosshairUi.SetActive(true);
         NpUi.SetActive(false);
         PlayerController.LockCursor();
         PlayerController.CanMove = true;

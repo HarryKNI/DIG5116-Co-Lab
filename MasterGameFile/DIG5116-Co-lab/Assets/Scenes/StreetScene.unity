@@ -8364,6 +8364,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2428099852308711422, guid: 3c56fec0a23cf024c96fdc99d437928a, type: 3}
   m_PrefabInstance: {fileID: 694784964}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &702663667 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8370964992083081886, guid: 7121fbc05c890914cbf6fa779c29a5e1, type: 3}
+  m_PrefabInstance: {fileID: 686598328}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &714633184
 GameObject:
   m_ObjectHideFlags: 0
@@ -13109,7 +13114,7 @@ PrefabInstance:
       objectReference: {fileID: 1870653557}
     - target: {fileID: 3794049617795800131, guid: 686c7d0135a877740930abca046d1084, type: 3}
       propertyPath: SceneString
-      value: Homeless SIfa Scene
+      value: InformationScene
       objectReference: {fileID: 0}
     - target: {fileID: 3794049617795800131, guid: 686c7d0135a877740930abca046d1084, type: 3}
       propertyPath: FPSUiManager
@@ -19396,6 +19401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TaskUi: {fileID: 1640447150}
   NpUi: {fileID: 1805166931}
+  CrosshairUi: {fileID: 702663667}
   defaultButton: {fileID: 424386644}
   _EventSystem: {fileID: 603858522}
   PlayerController: {fileID: 686598329}
@@ -27065,7 +27071,7 @@ PrefabInstance:
     - target: {fileID: 5349611063403007802, guid: 1e3145de34991a54190553f486a11f2b, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 8c906fa0442bee64eba83ccec4f6c25e, type: 3}
+      objectReference: {fileID: 8300000, guid: 13cbe1de8340bd9428a595d3d4e15ad5, type: 3}
     - target: {fileID: 6627923808859010356, guid: 1e3145de34991a54190553f486a11f2b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
