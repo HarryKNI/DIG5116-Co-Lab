@@ -11,6 +11,7 @@ public class FPSUiManager : MonoBehaviour
     [SerializeField] GameObject pauseMenuUi;
     [SerializeField] GameObject settingUi;
     [SerializeField] GameObject taskUi;
+    [SerializeField] GameObject interactUi;
 
     [Header("Button defaults")]
     [SerializeField] GameObject defaultPauseButton;
@@ -30,9 +31,11 @@ public class FPSUiManager : MonoBehaviour
     [SerializeField] string Task2Text;
     [SerializeField] string Task3Text;
     [SerializeField] string CompletionText;
+
     private string Task1Holder;
     private string Task2Holder;
     private string Task3Holder;
+
     [SerializeField] TMP_Text Task1TextBox;
     [SerializeField] TMP_Text Task2TextBox;
     [SerializeField] TMP_Text Task3TextBox;
@@ -87,6 +90,22 @@ public class FPSUiManager : MonoBehaviour
             Task3Holder = Task3TextBox.text;
         }
 
+    }
+
+    /// <summary>
+    /// This function sets the visibility of the interact ui
+    /// </summary>
+    /// <param name="state"></param>
+    public void SetInteractUiVisability(bool state)
+    {
+        if (state)
+        {
+            interactUi.SetActive(true);
+        }
+        else
+        {
+            interactUi.SetActive(false);
+        }
     }
 
     /// <summary>

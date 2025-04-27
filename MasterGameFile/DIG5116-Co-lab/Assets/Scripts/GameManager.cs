@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public bool isGamePaused = false;
+    public bool disablePausing = false;
 
     [Header("Task Completion Booleans")]
     public bool isTask1Completed = false;

@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3715814246813804145}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -39.429993, y: -3.149, z: 32.08}
+  m_LocalPosition: {x: 0, y: -3.149, z: 0}
   m_LocalScale: {x: 15, y: 10, z: 15}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -135,6 +135,8 @@ MonoBehaviour:
   SceneString: StreetScene
   GameManager: {fileID: 0}
   GetInput: {fileID: 0}
+  ArrowModel: {fileID: 4824388034872713278}
+  IndicatorModel: {fileID: 7475364820904460427}
 --- !u!65 &4984592713067396395
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -178,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c772e94d5e4e7e419caa4f3011aa5af, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.3984528
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c772e94d5e4e7e419caa4f3011aa5af, type: 3}
       propertyPath: m_LocalPosition.y
@@ -287,6 +289,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bobbingHeight: 0.25
   bobbingSpeed: 10
+--- !u!23 &4824388034872713278 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4253280567622488715, guid: 6c772e94d5e4e7e419caa4f3011aa5af, type: 3}
+  m_PrefabInstance: {fileID: 8787960481601974965}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9115182300977632606 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6c772e94d5e4e7e419caa4f3011aa5af, type: 3}

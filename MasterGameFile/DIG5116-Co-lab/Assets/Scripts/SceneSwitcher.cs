@@ -15,18 +15,23 @@ public class SceneSwitcher : MonoBehaviour
 
     [Header("Game manager")]
     [SerializeField] GameManager GameManager;
+    [SerializeField] FPSUiManager FPSUiManager;
 
     [Header("Input Manager")]
     [SerializeField] InputMapSubscriptions GetInput;
+
     private bool InteractionButtonPressed;
 
     [Header("Game Objects")]
+    [SerializeField] GameObject interactUi;
     [SerializeField] MeshRenderer ArrowModel;
     [SerializeField] MeshRenderer IndicatorModel;
+
 
     private void Start()
     {
         SetObjectVisability(false);
+        FPSUiManager = GameObject.Find("UIManager").GetComponent<FPSUiManager>();
     }
 
     private void Update()
@@ -36,6 +41,7 @@ public class SceneSwitcher : MonoBehaviour
         InteractionButtonPressed = GetInput.InteractionBinds;
         if (PlayerCanInteract && InteractionButtonPressed && CanInteract)
         {
+            FPSUiManager.SetInteractUiVisability(false);
             HandleSceneSwitch(SceneString);
         }
     }
@@ -46,6 +52,7 @@ public class SceneSwitcher : MonoBehaviour
         {
             case "Player":
                 PlayerCanInteract = true;
+                FPSUiManager.SetInteractUiVisability(true);
                 break;
             default:
                 break;
@@ -58,6 +65,7 @@ public class SceneSwitcher : MonoBehaviour
         {
             case "Player":
                 PlayerCanInteract = false;
+                FPSUiManager.SetInteractUiVisability(false);
                 break;
             default:
                 break;
